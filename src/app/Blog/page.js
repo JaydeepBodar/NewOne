@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "../../component/Container";
 const URL=process.env.API
-console.log("URl",URL)
+console.log("URlDATA",URL)
 async function getData() {
   const data = await fetch(
     `${URL}/api/post`,

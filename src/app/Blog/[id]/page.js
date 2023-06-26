@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "../../../component/Container";
 const URL=process.env.API
+console.log("first",URL)
 async function getData(id) {
   const data = await fetch(
     `${URL}/api/post/${id}`,
