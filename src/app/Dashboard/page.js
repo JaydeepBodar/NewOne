@@ -1,10 +1,14 @@
+'use client'
+import { useSession } from 'next-auth/react'
 import React from 'react'
-import Container from '../../component/Container'
+
 const Dashboard = () => {
+    const session=useSession()
+    console.log("session",session)
   return (
-    <Container>
+    <div>
       Dashboard
-    </Container>
+    </div>
   )
 }
 

@@ -20,7 +20,7 @@ const Navbar = () => {
         <nav className="flex items-center justify-between py-4 max-md:bottom-0">
           <Link href="/">
             <h1 className="text-2xl font-semibold">NewOne</h1>
-          </Link>q
+          </Link>
           <div className="ml-[auto] flex max-md:ml-0">
             <Darkmode />
           </div>
