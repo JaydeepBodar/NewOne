@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{
+  line-height: 28px;
+  box-sizing: border-box;
+}
+
+body .dark {
+  background-color: #000;
+  color: #fff;
+}
+body .light{
+  background-color: #fff;
+  color: #000;
+}
+.class{
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.data{
+  position: sticky;
+  top: 0;
+  background-color: #000;
+  z-index: 10;
+}
+.light .data{
+  background-color: #fff;
+}
+.light .img{
+    color: #fff; 
+}
+@media screen and (max-width:768px) {
+.menu{
+  position: fixed;
+  width: 200px;
+  top: 64px;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.70)
+} 
+.light .menu {
+  background-color: #fff ;
+}
+}
+@media screen and (max-width: 480px){
+  .Toastify .Toastify__toast-container {
+      width: 100%;
+      max-width: 250px;
+      top: 65px;
+      right: 0 !important;
+  }       
+}
