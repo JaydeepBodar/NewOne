@@ -1,6 +1,6 @@
 import React from "react";
 
-const Inputdata = ({value,onChange,placeholder,name,type}) => {
+const Inputdata = ({value,onChange,placeholder,name,type,pattern}) => {
   return (
     <div className="flex flex-col">
       <input
@@ -10,6 +10,7 @@ const Inputdata = ({value,onChange,placeholder,name,type}) => {
         placeholder={placeholder}
         name={name}
         type={type}
+        pattern={pattern}
       />
     </div>
   );

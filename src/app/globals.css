@@ -30,6 +30,14 @@ body .light{
 .light .img{
     color: #fff; 
 }
+.addclass{
+  font-size: 30px;
+  font-weight: 600;
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @media screen and (max-width:768px) {
 .menu{
   position: fixed;

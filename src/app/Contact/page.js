@@ -4,9 +4,9 @@ import Container from "../../component/Container";
 import Image from "next/image";
 import Contactimg from "../../../public/images/contact.png";
 import Inputdata from "../../component/Inputdata";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 import axios from "axios";
+import Toastcontainer from "@/component/Toastcontainer";
 const Contact = () => {
   const [Input, setInput] = useState({
     name: "",
@@ -37,19 +37,7 @@ const Contact = () => {
   };
   return (
     <Container>
-      <ToastContainer
-        className="max-md:w-[120px]"
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
+    <Toastcontainer/>
       <div className="text-center py-[30px]">
         <h2 className="text-3xl">Let's Keep In Touch...</h2>
       </div>

@@ -6,7 +6,7 @@ export const POST = async(req,res) => {
         try{
             await db()
             const{name,message,email}=await req.json()
-            console.log("req.body",req.body.name)
+
             if(!name || !email || !message){
                 return new NextResponse("All fill required",{status:400})
             }

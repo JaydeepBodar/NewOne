@@ -6,8 +6,8 @@ export default function Home() {
   return (
     <section>
       <Container>
-        <div className="flex items-center gap-x-20 max-lg:flex-col max-lg:flex-col-reverse                                                                    ">
-          <div>
+        <div className="max-sm:h-[81.1vh] max-sm:py-14 flex items-center gap-x-20 max-lg:flex-col-reverse">
+          <div className="max-sm:px-[25px]">
             <h2 className="class text-[52px] max-md:text-[32px] leading-[1.1] bg-gradient-to-b from-[#568868] to-[#e2e8f0]">
               Better Design For Your Digital Products
             </h2>
@@ -20,10 +20,12 @@ export default function Home() {
               See Our Works
             </button>
           </div>
+          <div className="max-sm:mb-4" >
           <Image
             src={Bannerimg}
             className="animate-bounce-custom w-[500px] h-[500px] max-md:w-[300px] max-md:h-[300px]"
           />
+          </div>
         </div>
       </Container>                                      
     </section>

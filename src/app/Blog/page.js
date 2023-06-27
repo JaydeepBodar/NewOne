@@ -1,33 +1,35 @@
+"use client";
 import axios from "axios";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "../../component/Container";
-const URL=process.env.API
-console.log("URlDATA",URL)
-async function getData() {
-  const data = await fetch(
-    `${URL}/api/post`,
-    { cache: "no-store" }
-  );
-  console.log("data",data)   
-  if (!data) {
-    console.log("error");
-  }
-  return data.json();
-}
-const Blog = async () => {
-  const blog = await getData();
+const Blog = () => {
+  const [blog, setblog] = useState([]);
+  const [loading, setloading] = useState(true);
+  const URL = process.env.API;
+  useEffect(() => {
+    axios
+      .get(`${URL}/api/post`)
+      .then((res) => setblog(res.data))
+      .catch((e) => console.log("e", e)).finally(()=>setloading(false))
+  }, [loading]);
   return (
     <Container>
-      <div className="grid grid-flow-row grid-cols-3 gap-x-4 max-md:grid-cols-2 max-sm:px-[25px] max-sm:grid-cols-1">
-        {blog.map((val) => {
-          const { url, title, id, user } = val;
+      <div className='max-sm:px-[25px]'>
+        <Link className="block w-[100%] rounded-lg py-2 max-w-[200px] bg-transparent text-[#4ade80] border-[1px] text-center border-[#4ade80] max-sm:max-w-[100%]" href="/Blog/Addblog">Add Your Own Blog</Link>
+      </div>
+      {loading && <h4 className={loading && 'addclass'}>Loading...</h4>}
+      {!loading &&       <div className="grid grid-flow-row grid-cols-3 gap-x-4 max-md:grid-cols-2 max-sm:px-[25px] max-sm:grid-cols-1">
+        {blog.map((val, index) => {
+          console.log("val",val)
+          const { url, title, _id, user } = val;
           return (
-            <Link href={`/Blog/${id}`} key={id} className="py-4">
+            <Link href={`/Blog/${_id}`} key={index} className="py-4">
               <div className="relative mb-3 overflow-hidden">
                 <Image
                   src={url}
+                  style={{ height: "300px" }}
                   width={300}
                   height={300}
                   className="w-[100%] rounded-lg transform transition-all hover:scale-[1.2] overflow-hidden"
@@ -41,7 +43,7 @@ const Blog = async () => {
             </Link>
           );
         })}
-      </div>
+      </div>}
     </Container>
   );
 };
