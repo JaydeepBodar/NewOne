@@ -42,7 +42,7 @@ const Navbar = () => {
                   </li>
                 );
               })}
-              <li>
+              <li className="max-md:mx-[auto]">
                 <button className="text-black bg-[#4ade80] px-3 py-1 leading-1 font-medium rounded-sm">
                   logout
                 </button>
