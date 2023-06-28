@@ -58,18 +58,25 @@ body .light{
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 10;
+  z-index: 0;
 } 
+.light .responsive{
+  background-color: #fff ;
+}
 .light .menu {
   background-color: #fff ;
 }
+.responsive li a{
+  text-align: center;
+}
 .responsive{
+  z-index: 2;
   position: fixed;
   left: 0;
   right: 0;
   height: 100%;
   width: 100%;
-  max-width: 200px;
+  max-width: 100%;
   background-color: rgba(0, 0, 0, 0.70);
 }
 }

@@ -34,9 +34,9 @@ const Navbar = () => {
               {link.map((val) => {
                 const { id, title, url } = val;
                 return (
-                  <li key={id} className="max-md:pb-2">
+                  <li key={id} className="max-md:pb-2 max-md:w-[100%]">
                     {" "}
-                    <Link href={url} className="hover:text-[#4ade80]">
+                    <Link href={url} className="hover:text-[#4ade80] max-md:flex max-md:justify-center">
                       {title}
                     </Link>
                   </li>
