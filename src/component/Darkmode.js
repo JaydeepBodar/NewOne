@@ -15,7 +15,7 @@ const Darkmode = () => {
       </div>
       <div
         onClick={toggle}
-        className="bg-[#4ade80] w-[24px] h-[24px] max-md:w-[17px] max-md:h-[17px] rounded-full absolute top-[2.5px]"
+        className="bg-[#4ade80] w-[24px] h-[24px] max-md:w-[17.5px] max-md:h-[17.5px] rounded-full absolute top-[2.5px]"
         style={mode === "light" ? { left: "4px" } : { right: "4px" }}
       />
     </div>

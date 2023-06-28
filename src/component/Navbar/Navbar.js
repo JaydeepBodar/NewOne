@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Container from "../Container";
 import Darkmode from "../Darkmode";
 import { FiMenu } from "react-icons/fi";
+import {AiOutlineClose} from "react-icons/ai"
 export  const link = [
   { id: "1", title: "Home", url: "/" },
   { id: "2", title: "About", url: "/about" },
@@ -26,10 +27,10 @@ const Navbar = () => {
           </div>
           <div
             className={`${
-              toggle === true ? "menu" : "max-md:hidden"
-            } transition-all duration-700`}
-          >
-            <ul className="md:pl-4 flex gap-x-3 items-center max-md:flex-col max-md:items-start max-md:pl-3">
+              toggle === true ? "menu transition-all duration-700" : "max-md:hidden"
+            } transition-all duration-700`} onClick={()=>settoggle(false)}
+          > 
+            <ul className="md:pl-4 responsive flex gap-x-3 items-center max-md:flex-col max-md:items-start max-md:pl-3">
               {link.map((val) => {
                 const { id, title, url } = val;
                 return (
@@ -52,7 +53,7 @@ const Navbar = () => {
             className="max-md:block hidden ambegure"
             onClick={() => settoggle((prev) => !prev)}
           >
-            <FiMenu className="w-[25px] h-[25px]" />
+            {!toggle ? <FiMenu className="w-[25px] h-[25px]" /> : <AiOutlineClose className="w-[25px] h-[25px]"/>}
           </div>
         </nav>
       </Container>

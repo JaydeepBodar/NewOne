@@ -9,7 +9,7 @@ async function getData(id) {
   console.log("id",id)
   const data = await fetch(
     `${URL}/api/post/${id}`,
-    { cache: "no-store" }
+    { cache: "no-store" } 
   );
   if (!data) {
     console.log("error");
