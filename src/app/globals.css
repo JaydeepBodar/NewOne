@@ -89,6 +89,7 @@ body .light{
 a.page-link{
   text-decoration: none;
   padding: 8px;
+  border: 1px solid;
 }
 ul.pagination {
   position: relative;
@@ -98,14 +99,14 @@ ul.pagination {
   column-gap: 15px;
   margin: 10px 0 30px;
 }
-.dark a.page-link {
+/* .dark a.page-link {
   color: #fff;
   border: 1px solid #fff;
 }
 .light a.page-link{
   color: #000;
   border: 1px solid;
-}
+} */
 .light a.page-link.active {
   background: #000;
   color: #fff;

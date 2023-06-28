@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import "./Pagination.css"
 const Pagination = ({
   itemsPerPage,
   totalItems,
