@@ -51,7 +51,7 @@ const Blog = () => {
   });
   return (
     <Container>
-      <div className="max-sm:px-[25px] items-center flex justify-between max-sm:flex-col max-sm:gap-y-4">
+      <div className="items-center flex justify-between max-sm:flex-col max-sm:gap-y-4">
         <Link
           className="block w-[100%] rounded-lg py-2 max-w-[200px] bg-transparent text-[#4ade80] border-[1px] text-center border-[#4ade80] max-sm:max-w-[100%]"
           href="/Blog/Addblog"
@@ -76,7 +76,7 @@ const Blog = () => {
       {loading && <h4 className={loading && "addclass"}>Loading...</h4>}
       {!loading && (
         <div>
-          <div className="grid grid-flow-row grid-cols-3 gap-x-4 max-md:grid-cols-2 max-sm:px-[25px] max-sm:grid-cols-1">
+          <div className="grid grid-flow-row grid-cols-3 gap-x-4 max-md:grid-cols-2 max-sm:grid-cols-1">
             {sortdata.slice(indexOfFirstItem, indexOfLastItem).map((val, index) => {
               console.log("val", val);
               const { url, title, _id, user } = val;

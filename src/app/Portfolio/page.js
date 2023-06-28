@@ -15,7 +15,7 @@ const Portfolio = () => {
           const { name, image,category } = val;
           return (
             <Link key={index}
-              className="relative block w-[300px] h-[300px] max-sm:mx-[25px] border-[5px] bg-cover max-sm:w-[100%]"
+              className="relative block w-[300px] h-[300px] border-[5px] bg-cover max-sm:w-[100%]"
               style={{ backgroundImage: `url(${image})` }}
               href={`/Portfolio/${category}`} 
             >

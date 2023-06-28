@@ -43,7 +43,7 @@ const Contact = () => {
       </div>
       <div className="grid grid-flow-row grid-cols-2 gap-x-12 items-center max-sm:grid-cols-1">
         <Image src={Contactimg} />
-        <div className="py-[60px] max-md:px-[25px]">
+        <div className="py-[60px]">
           <form onSubmit={handleSubmit}>
             <Inputdata
               type="text"

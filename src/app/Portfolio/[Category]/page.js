@@ -20,7 +20,7 @@ const Category = ({ params }) => {
       {data.map((val) => {
         const { title, desc, image } = val;
         return (
-          <div className="flex gap-x-10 mb-[30px] max-md:flex-wrap max-md:px-[25px]">
+          <div className="flex gap-x-10 mb-[30px] max-md:flex-wrap">
             <Image src={image} width={300} height={300} className='max-md:w-[100%]' />
             <div className="max-md:mt-4">
               <h3 className="text-2xl max-sm:text-base font-semibold">{title}</h3>

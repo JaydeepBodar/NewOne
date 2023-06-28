@@ -27,7 +27,7 @@ const singleBlog = async ({params}) => {
   const { title, url, description, user } = data
   return (
     <Container> 
-      <div className="max-md:px-[25px] grid grid-flow-row items-center grid-cols-2 gap-x-9 mt-10 h-[72.1vh] max-sm:h-[auto] max-sm:grid-cols-1">
+      <div className=" grid grid-flow-row items-center grid-cols-2 gap-x-9 mt-10 h-[72.1vh] max-sm:h-[auto] max-sm:grid-cols-1">
         <div className="relative">
           <Image width={500} height={500} className="h-[400px] object-fill rounded-lg max-sm:text-center max-sm:w-[100%]" src={url} />
           <h4 className="absolute w-[32px] h-[32px] leading-8 text-center rounded-full bg-white top-2 left-3 text-black">
