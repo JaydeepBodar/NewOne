@@ -5,6 +5,7 @@ import bcrypt from 'bcrypt'
 import React from 'react'
 
 export const POST = async(req,res) => {
+	console.log("rew",req)
  try{
     await db()
     const {name,email,password}=await req.json()
