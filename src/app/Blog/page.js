@@ -6,6 +6,7 @@ import Link from "next/link";
 import Container from "../../component/Container";
 import "react-dropdown/style.css";
 import Pagination from "@/component/Pagination";
+import Loader from "@/component/Loader";
 const Blog = () => {
   const sortoption = [
     { label: "Oldest Blog", value: "oldest-accending", code: 2 },
@@ -13,11 +14,11 @@ const Blog = () => {
     { label: "Alphabetically, A-Z", value: "alphabetic-accending", code: 3 },
     { label: "Alphabetically, Z-A", value: "alphabetic-decending", code: 4 },
   ];
-    // pagination
-    const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage, setItemsPerPage] = useState(6);
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  // pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(6);
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const [blog, setblog] = useState([]);
   const [loading, setloading] = useState(true);
   const [sortOption, setSortOption] = useState("");
@@ -73,34 +74,36 @@ const Blog = () => {
           })}
         </select>
       </div>
-      {loading && <h4 className={loading && "addclass"}>Loading...</h4>}
+      {loading && (<Loader/> )}
       {!loading && (
         <div>
           <div className="grid grid-flow-row grid-cols-3 gap-x-4 max-md:grid-cols-2 max-sm:grid-cols-1">
-            {sortdata.slice(indexOfFirstItem, indexOfLastItem).map((val, index) => {
-              console.log("val", val);
-              const { url, title, _id, user } = val;
-              return (
-                <Link href={`/Blog/${_id}`} key={index} className="py-4">
-                  <div className="relative mb-3 overflow-hidden">
-                    <Image
-                      src={url}
-                      style={{ height: "300px" }}
-                      width={300}
-                      height={300}
-                      className="w-[100%] rounded-lg transform transition-all hover:scale-[1.2] overflow-hidden"
-                      alt={title}
-                    />
-                    <h4 className="absolute w-[32px] h-[32px] leading-8 text-center rounded-full bg-white top-2 left-3 text-black">
-                      {user}
-                    </h4>
-                  </div>
-                  <h3 className="text-2xl font-semibold max-lg:text-xl">
-                    {title}
-                  </h3>
-                </Link>
-              );
-            })}
+            {sortdata
+              .slice(indexOfFirstItem, indexOfLastItem)
+              .map((val, index) => {
+                console.log("val", val);
+                const { url, title, _id, user } = val;
+                return (
+                  <Link href={`/Blog/${_id}`} key={index} className="py-4">
+                    <div className="relative mb-3 overflow-hidden">
+                      <Image
+                        src={url}
+                        style={{ height: "300px" }}
+                        width={300}
+                        height={300}
+                        className="w-[100%] rounded-lg transform transition-all hover:scale-[1.2] overflow-hidden"
+                        alt={title}
+                      />
+                      <h4 className="absolute w-[32px] h-[32px] leading-8 text-center rounded-full bg-white top-2 left-3 text-black">
+                        {user}
+                      </h4>
+                    </div>
+                    <h3 className="text-2xl font-semibold max-lg:text-xl">
+                      {title}
+                    </h3>
+                  </Link>
+                );
+              })}
           </div>
           <Pagination
             itemsPerPage={itemsPerPage}

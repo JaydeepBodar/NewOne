@@ -35,6 +35,29 @@ body .light{
 .light .img{
     color: #fff; 
 }
+.waviy {
+  position: relative;
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.waviy span {
+  position: relative;
+  display: inline-block;
+  font-size: 40px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  transition: all liniear 0.5s;
+  animation: flip 0.5s infinite;
+  animation-delay: calc(.2s * var(--i))
+}
+@keyframes flip {
+  0%,80% {
+    transform: rotateY(360deg) 
+  }
+}
 .addclass{
   font-size: 30px;
   font-weight: 600;

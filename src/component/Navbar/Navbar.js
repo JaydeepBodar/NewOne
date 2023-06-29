@@ -5,6 +5,8 @@ import Container from "../Container";
 import Darkmode from "../Darkmode";
 import { FiMenu } from "react-icons/fi";
 import {AiOutlineClose} from "react-icons/ai"
+import { signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
 export  const link = [
   { id: "1", title: "Home", url: "/" },
   { id: "2", title: "About", url: "/about" },
@@ -15,6 +17,7 @@ export  const link = [
 ];
 const Navbar = () => {
   const [toggle, settoggle] = useState(false);
+  const session = useSession();
   return (
     <header className="data">
       <Container>
@@ -42,11 +45,11 @@ const Navbar = () => {
                   </li>
                 );
               })}
-              <li className="max-md:mx-[auto]">
-                <button className="text-black bg-[#4ade80] px-3 py-1 leading-1 font-medium rounded-sm">
+              {session.status === "authenticated" && <li className="max-md:mx-[auto]">
+                <button onClick={signOut} className="text-black bg-[#4ade80] px-3 py-1 leading-1 font-medium rounded-sm">
                   logout
                 </button>
-              </li>
+              </li>}
             </ul>
           </div>
           <div

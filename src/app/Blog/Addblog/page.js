@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Container from "@/component/Container";
 import Image from "next/image";
 import Inputdata from "@/component/Inputdata";
-import Blogimg from "../../../../public/images/pexels-pixabay-262508.jpg";
+import Blogimg from "../../../../public/images/pexels-pixabay-262508 .jpg";
 import axios from "axios";
 import { toast } from "react-toastify";
 import Toastcontainer from "@/component/Toastcontainer";
