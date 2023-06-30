@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { signIn, useSession } from "next-auth/react";
 import Toastcontainer from "@/component/Toastcontainer";
 import Inputdata from "@/component/Inputdata";
-import {FcGoogle} from 'react-icons/fc'
+import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import Container from "@/component/Container";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -48,7 +48,9 @@ const login = ({ csrfToken }) => {
       <Toastcontainer />
       <div className="h-[78.5vh] flex flex-col justify-center items-center">
         <div className="formdata w-[500px] max-sm:max-w-[100%] mx-[auto] formdata max-sm:px-10 max-sm:py-12 rounded-md px-16 py-14">
-          <h4 className="text-center font-semibold text-3xl tracking-wide mb-4">Log in...</h4>
+          <h4 className="text-center font-semibold text-3xl tracking-wide mb-4">
+            Log in...
+          </h4>
           <form onSubmit={handleSubmit}>
             <Inputdata
               type="email"
@@ -69,16 +71,25 @@ const login = ({ csrfToken }) => {
             </button>
             {error && error}
           </form>
-          <button className="w-[100%] flex items-center border-[1px] border-blue-500 rounded-md"
+          <button
+            className="w-[100%] flex items-center border-[1px] border-blue-500 rounded-md"
             onClick={() => {
               signIn("google");
             }}
           >
-           <p className="shrink w-[20%] bg-white max-sm:py-[5px] py-[14px] rounded-bl-md rounded-tl-md "><FcGoogle className="text-lg md:text-1xl mx-[auto]"/></p> <p className="font-semibold tracking-wide max-sm:py-[5px] py-[10px] shrink w-[80%] bg-blue-500">Log in with google</p>
+            <p className="shrink w-[20%] bg-white max-sm:py-[10px] py-[14px] rounded-bl-md rounded-tl-md ">
+              <FcGoogle className="text-lg md:text-1xl mx-[auto]" />
+            </p>{" "}
+            <p className="font-semibold tracking-wide max-sm:py-[5px] py-[10px] shrink w-[80%] bg-blue-500">
+              Log in with google
+            </p>
           </button>
-          <Link href="/Dashboard/Register" className="pt-2 flex justify-center hover:text-blue-600 transition-all duration-500">
-          Create New Account...
-        </Link>
+          <Link
+            href="/Dashboard/Register"
+            className="pt-2 flex justify-center hover:text-blue-600 transition-all duration-500"
+          >
+            Create New Account...
+          </Link>
         </div>
       </div>
     </Container>
