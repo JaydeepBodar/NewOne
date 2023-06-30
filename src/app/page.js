@@ -1,6 +1,7 @@
 'use client'
 import Image from "next/image";
 import Bannerimg from "../../public/images/hero.png";
+import Link from "next/link";
 import Container from "../component/Container";
 import { TypeAnimation } from 'react-type-animation';
 export default function Home() {
@@ -18,9 +19,9 @@ export default function Home() {
               electronic typesetting, remaining essentially unchanged. It was
               popularised in the 1960s
             </p>
-            <button className="w-[140px] max-md:w-[120px] max-md:text-sm bg-[#4ade80] py-2 text-black rounded-md font-semibold">
+            <Link href="/Portfolio" className="block text-center w-[140px] max-md:w-[120px] max-md:text-sm bg-[#4ade80] py-2 text-black rounded-md font-semibold">
               See Our Works
-            </button>
+            </Link>
           </div>
           <div className="max-sm:mb-4" >
           <Image

@@ -32,11 +32,11 @@ const page = () => {
           toast.warn(res.data);
         } else {
           toast.success(res.data);
-          route.push("/");
+          setInput({ name: "", email: "", password: "" });
+          route.push("/Dashboard/login");
         }
       })
       .catch((e) => console.log("error", e));
-    setInput({ name: "", email: "", password: "" });
   };
   return (
     <Container>
