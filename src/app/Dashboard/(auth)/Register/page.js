@@ -9,7 +9,7 @@ import Toastcontainer from "@/component/Toastcontainer";
 import { useRouter } from "next/navigation";
 
 const page = () => {
-  const route=useRouter()
+  const route = useRouter();
   const [Input, setInput] = useState({
     name: "",
     email: "",
@@ -23,23 +23,30 @@ const page = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const Url = process.env.API;
-    axios.post(`${Url}/api/auth/Register`, { ...Input }).then((res) => {
-      if (res.status === 202) {
-        toast.error(res.data);
-      }else if(res.status === 201){
-        toast.warn(res.data)
-      }else{
-        toast.success(res.data)
-        route.push('/')
-      }
-    }).catch((e)=>console.log("error",e))
-    setInput({name:"",email:"",password:""})
+    axios
+      .post(`${Url}/api/auth/Register`, { ...Input })
+      .then((res) => {
+        if (res.status === 202) {
+          toast.error(res.data);
+        } else if (res.status === 201) {
+          toast.warn(res.data);
+        } else {
+          toast.success(res.data);
+          route.push("/");
+        }
+      })
+      .catch((e) => console.log("error", e));
+    setInput({ name: "", email: "", password: "" });
   };
   return (
     <Container>
-    <Toastcontainer/>
+      <Toastcontainer />
       <div className="h-[78.5vh] flex flex-col justify-center items-center">
-        <form className="w-[500px] max-sm:max-w-[100%   ]" onSubmit={handleSubmit}>
+        <div className="w-[500px] max-sm:max-w-[100%] mx-[auto] formdata max-sm:px-10 max-sm:py-12 rounded-md px-16 py-14">
+        <h4 className="text-center font-semibold text-3xl tracking-wide mb-4">
+          Sign up...
+        </h4>
+        <form onSubmit={handleSubmit}>
           <Inputdata
             type="text"
             value={name}
@@ -65,9 +72,10 @@ const page = () => {
             Register
           </button>
         </form>
-        <Link href="/Dashboard/login" className="pt-2">
+        <Link href="/Dashboard/login" className="pt-2 flex justify-center hover:text-blue-600 transition-all duration-500">
           Log in with an existing account
         </Link>
+        </div>
       </div>
     </Container>
   );

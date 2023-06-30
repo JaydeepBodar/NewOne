@@ -150,3 +150,9 @@ ul.pagination {
   background-color: #fff;
   color: #000;
 } 
+.dark .formdata{
+  background-color: rgba(255, 255, 255, 0.50);
+}
+.light .formdata{
+  background-color: rgba(0, 0, 0, 0.50);
+}

@@ -12,31 +12,39 @@ const handler =NextAuth( {
   providers: [
 
     GoogleProvider({
+      clientId:process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET,
     }),
     CredentialsProvider({
       id:'credentials',
       name:"Credentials",
-      async authorize(credential){
+      async authorize(credentials,req,res){
+        console.log("credentials",credentials)
+        const {email,password}=credentials
         await db();
         try{
-          const user=await userSchema.findOne({email:credential.email})
+            if(!email || !password){
+              console.log("All field are require")
+            }
+          const user=await userSchema.findOne({email:email})
           if(user){ 
-            const checkpassword=await bcrypt.compare(credential.password,user.password)
+            const checkpassword=await bcrypt.compare(password,user.password)
+            console.log("checkpassword",checkpassword)
             if(checkpassword){
               return user
             }else{
-              return new NextResponse("Wrong password",{status:202})
+              
+              // throw new Error("Wrong password")
             }
           }else{
-            return new NextResponse("User not Found",{status:400})
+            return
+            // throw new Error("wrong credential")
           }
         }catch(e){
 
         }
       }
     })
-    // ...add more providers here
   ],  pages: {
     error: "/dashboard/login",
   },
