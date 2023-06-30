@@ -7,6 +7,8 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from 'next-auth/providers/google'
 import { NextResponse } from "next/server"
 console.log("process.env.GOOGLE_ID",process.env.GOOGLE_ID)
+console.log("urldata",process.env.API)
+console.log("process.env.GOOGLE_SECRET",process.env.GOOGLE_SECRET)
 const handler =NextAuth( {
   // Configure one or more authentication providers
   providers: [

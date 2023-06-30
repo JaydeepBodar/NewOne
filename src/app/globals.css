@@ -35,6 +35,12 @@ body .light{
 .light .img{
     color: #fff; 
 }
+.light .waviy{
+  color: #000;
+}
+.dark .waviy{
+  color: #fff ;
+}
 .waviy {
   position: relative;
   height: 75vh;
@@ -47,7 +53,6 @@ body .light{
   display: inline-block;
   font-size: 40px;
   font-weight: 600;
-  color: #fff;
   text-transform: uppercase;
   transition: all liniear 0.5s;
   animation: flip 0.5s infinite;
