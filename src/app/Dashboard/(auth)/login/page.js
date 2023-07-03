@@ -6,7 +6,8 @@ import Inputdata from "@/component/Inputdata";
 import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import Container from "@/component/Container";
-import { useRouter, useSearchParams } from "next/navigation";
+import { redirect, useRouter, useSearchParams } from "next/navigation";
+import { toast } from "react-toastify";
 const login = ({ csrfToken }) => {
   const session = useSession();
   const router = useRouter();
@@ -29,26 +30,30 @@ const login = ({ csrfToken }) => {
     setInput({ ...Input, [name]: value });
   };
   if (session.status === "authenticated") {
-    router?.push("/Dashboard");
+    router.push("/Dashboard")
   }
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    if (!email || !password) {
-      alert("all field");
-    } else {
-      signIn("credentials", { ...Input });
+    try{
+        const res=await signIn("credentials", {redirect:false,...Input });
+        console.log("res",res)
+        if(res.error){
+          toast.error(res.error)
+        }else{
+          return res
+        }
+    }catch(err){
+      console.log("datafirst")
+      console.log("err",err)
     }
-    // try{
-    // }catch(e){
-    //   console.log("e",e)
-    // }
+
   };
   return (
     <Container>
       <Toastcontainer />
       <div className="h-[78.5vh] flex flex-col justify-center items-center">
         <div className="formdata w-[500px] max-sm:max-w-[100%] mx-[auto] formdata max-sm:px-10 max-sm:py-12 rounded-md px-16 py-14">
-          <h4 className="text-center font-semibold text-3xl tracking-wide mb-4">
+          <h4 className="text-center font-semibold text-3xl mb-4 tracking-normal">
             Log in...
           </h4>
           <form onSubmit={handleSubmit}>

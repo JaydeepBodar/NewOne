@@ -53,12 +53,6 @@ const Blog = () => {
   return (
     <Container>
       <div className="items-center flex justify-between max-sm:flex-col max-sm:gap-y-4">
-        <Link
-          className="block w-[100%] rounded-lg py-2 max-w-[200px] bg-transparent text-[#4ade80] border-[1px] text-center border-[#4ade80] max-sm:max-w-[100%]"
-          href="/Blog/Addblog"
-        >
-          Add Your Own Blog
-        </Link>
         <select
           className="drop-down"
           value={sortOption}
