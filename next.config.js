@@ -5,7 +5,7 @@ const nextConfig = {
       },
       env:{
         API:process.env.API
-      },secret:process.env.SECERET
+      }
 }
 
 module.exports =nextConfig;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                nextConfig

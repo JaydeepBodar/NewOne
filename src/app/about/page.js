@@ -4,6 +4,8 @@ import img from "../../../public/images/redd-f-5U_28ojjgms-unsplash.jpg";
 import Image from "next/image";
 import Link from "next/link";
 const About = () => {
+  const data=process.env.SECERET
+  console.log("data",data)
   return (
     <Container>
       <div className="relative">
