@@ -5,7 +5,6 @@ import Link from "next/link";
 import Container from "@/component/Container";
 const Dashboard = () => {
   const session = useSession();
-  console.log("session", session);
   return (
     <Container>
       <div className="h-[76.5vh] flex flex-col justify-center items-center">
