@@ -7,7 +7,7 @@ const Dashboard = () => {
   const session = useSession();
   return (
     <Container>
-      <div className="h-[77.5vh] flex flex-col justify-center items-center">
+      <div className="h-[79.4vh] flex flex-col justify-center items-center">
         {session.status === "authenticated" ? (
           <div className="w-[100%] text-center">
             <Link
