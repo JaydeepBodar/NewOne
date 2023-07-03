@@ -8,7 +8,7 @@ const Portfolio = () => {
     { name: "applications" ,image:'https://res.cloudinary.com/dxlicroam/image/upload/v1686041295/apps_xtob2q.jpg',category:"applications"},
   ];
   return (
-    <div>
+    <div className="md:pb-[7px]">
       <h5 className="text-xl py-7">Choose our Gallery</h5>
       <div className="flex flex-wrap gap-7">
         {categorydata.map((val, index) => {

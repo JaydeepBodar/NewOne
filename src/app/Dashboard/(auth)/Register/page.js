@@ -41,7 +41,7 @@ const page = () => {
   return (
     <Container>
       <Toastcontainer />
-      <div className="h-[78.5vh] flex flex-col justify-center items-center">
+      <div className="h-[78.5vh] md:mb-[4px] flex flex-col justify-center items-center">
         <div className="w-[500px] max-sm:max-w-[100%] mx-[auto] formdata max-sm:px-10 max-sm:py-12 rounded-md px-16 py-14">
         <h4 className="text-center font-semibold text-3xl tracking-normal mb-4">
           Sign up...
