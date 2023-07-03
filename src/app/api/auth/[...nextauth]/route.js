@@ -20,7 +20,6 @@ const handler = NextAuth({
       id: "credentials",
       name: "Credentials",
       async authorize(credentials, req, res) {
-        console.log("credentials", credentials);
         const { email, password } = credentials;
         await db();
           if (!email || !password) {
