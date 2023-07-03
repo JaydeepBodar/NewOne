@@ -14,7 +14,7 @@ const Toastcontainer = () => {
       pauseOnFocusLoss
       draggable
       pauseOnHover
-      theme="light"
+      theme="colored"
     />
   );
 };

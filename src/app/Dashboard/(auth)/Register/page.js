@@ -10,7 +10,6 @@ import { useRouter } from "next/navigation";
 
 const page = () => {
   const route = useRouter();
-  const[err,seterr]=useState('')
   const [Input, setInput] = useState({
     name: "",
     email: "",
@@ -28,14 +27,11 @@ const page = () => {
       .post(`${Url}/api/auth/Register`,JSON.stringify({...Input}))
       .then((res) => {
         if (res.status === 202) {
-          seterr(res.data)
-          // toast.error(res.data);
+          toast.error(res.data);
         } else if (res.status === 201) {
-          seterr(res.data)
-          // toast.warn(res.data);
+          toast.warn(res.data);
         } else {
-          seterr(res.data)
-          // toast.success(res.data);
+          toast.success(res.data);
           setInput({ name: "", email: "", password: "" });
           route.push("/Dashboard/login");
         }
@@ -72,7 +68,6 @@ const page = () => {
             onChange={InputChange}
             placeholder="password..."
           />
-          {err ? <p>{err}</p> : ''}
           <button className="w-[100%] max-sm:py-[5px] py-[10px] bg-[#4ade80] text-black font-semibold tracking-wide rounded-md">
             Register
           </button>
