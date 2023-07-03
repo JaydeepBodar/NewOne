@@ -4,7 +4,7 @@ import { ObjectId } from "mongoose";
 import Link from "next/link";
 import Container from "../../../component/Container";
 const URL=process.env.API
-console.log("firstdata",URL)
+console.log("first",URL)
 async function getData(id) {
   console.log("id",id)
   const data = await fetch(

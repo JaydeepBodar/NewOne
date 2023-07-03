@@ -11,6 +11,7 @@ const handler = NextAuth({
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET,
+      version: "2.0", 
     }),
     CredentialsProvider({
       id: "credentials",
@@ -36,7 +37,7 @@ const handler = NextAuth({
   
       },
     }),
-  ],
+  ], 
   pages: {
     signIn: "/login",
   },
