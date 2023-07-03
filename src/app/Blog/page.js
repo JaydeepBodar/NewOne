@@ -31,7 +31,6 @@ const Blog = () => {
       .finally(() => setloading(false));
   }, [loading, sortOption]);
   const sortdata = blog.sort((a, b) => {
-    console.log("data", a);
     if (sortOption === "latest-accending") {
       return b.createdAt
         .split("/")
