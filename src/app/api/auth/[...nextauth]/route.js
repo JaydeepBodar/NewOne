@@ -2,13 +2,9 @@ import userSchema from "@/Model/userSchema";
 import db from "@/utils/db";
 import NextAuth from "next-auth";
 import bcrypt from "bcrypt";
-import GithubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
-import { NextResponse } from "next/server";
-console.log("process.env.GOOGLE_ID", process.env.GOOGLE_ID);
-console.log("urldata", process.env.API);
-console.log("process.env.GOOGLE_SECRET", process.env.GOOGLE_SECRET);
+console.log("first")
 const handler = NextAuth({
   // Configure one or more authentication providers
   providers: [
