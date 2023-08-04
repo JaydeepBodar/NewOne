@@ -1,6 +1,5 @@
 import React from "react"
 import Link from "next/link";
-import Layout from "./layout";
 const Portfolio = () => {
   const categorydata = [
     { name: "illustrations", image: "https://res.cloudinary.com/dxlicroam/image/upload/v1686041071/illustration_t9d6xr.png",category:'illustrations' },
