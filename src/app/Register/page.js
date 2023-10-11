@@ -33,7 +33,7 @@ const page = () => {
         } else {
           toast.success(res.data);
           setInput({ name: "", email: "", password: "" });
-          route.push("/Dashboard/login");
+          route.push("/login");
         }
       })
       .catch((e) => console.log("error", e));

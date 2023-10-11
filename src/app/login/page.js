@@ -8,7 +8,7 @@ import Link from "next/link";
 import Container from "@/component/Container";
 import { redirect, useRouter, useSearchParams } from "next/navigation";
 import { toast } from "react-toastify";
-const login = ({ csrfToken }) => {
+const login = () => {
   const session = useSession();
   const router = useRouter();
   console.log("session", session);
@@ -40,7 +40,7 @@ const login = ({ csrfToken }) => {
         if(res.error){
           toast.error(res.error)
         }else{
-          return res
+          router.push("/Dashboard")
         }
     }catch(err){
       console.log("datafirst")
@@ -90,7 +90,7 @@ const login = ({ csrfToken }) => {
             </p>
           </button>
           <Link
-            href="/Dashboard/Register"
+            href="/Register"
             className="pt-2 flex justify-center hover:text-blue-600 transition-all duration-500"
           >
             Create New Account...
