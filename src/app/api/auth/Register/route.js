@@ -2,7 +2,6 @@ import userSchema from '@/Model/userSchema'
 import db from '@/utils/db'
 import { NextResponse } from 'next/server'
 import bcrypt from 'bcrypt'
-import React from 'react'
 
 export const POST = async(req,res) => {
 	console.log("rew",req)      

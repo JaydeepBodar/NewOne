@@ -28,19 +28,32 @@ const handler = NextAuth({
             console.log("checkpassword", checkpassword);
             if (checkpassword) {
               return user;
+              
             } else {
               throw new Error("Wrong password",{statusCode:400});
             }
           } else {
             throw new Error("User not Found!");
           }
-  
+
       },
-    }),
-  ], 
+    }), 
+  ],
+  secret: process.env.NEXTAUTH_SECRET,
+  callbacks:{
+    jwt:async ({token,user})=>{
+      token === user
+      return token
+    },
+    session:async({session,token})=>{
+      console.log("sessionsessionsession",session)
+      console.log("objectsessionsession",token)
+      session.user === token
+      return session
+    } 
+  }, 
   pages: {
-    signIn: "/login",
+    signIn: "/Dashboard/login",
   },
-  secret: process.env.SECERET
 });
 export { handler as GET, handler as POST };
